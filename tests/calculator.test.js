@@ -16,3 +16,8 @@ test("handle any amount of number", () => {
   expect(add("1,2,3,4,5")).toBe(15);
   expect(add("10,20,30")).toBe(60);
 });
+
+test("handle new lines between numbers", () => {
+  expect(add("1\n2,3")).toBe(6);
+  expect(add("10\n20\n30")).toBe(60);
+});
