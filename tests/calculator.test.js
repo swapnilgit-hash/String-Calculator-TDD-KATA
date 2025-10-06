@@ -27,3 +27,13 @@ test("support different Delimiter", () => {
   expect(add("//|\n1|2|3")).toBe(6);
   expect(add("//sep\n2sep3")).toBe(5);
 });
+
+test("single negative numbers throw an exception", () => {
+  expect(() => add("-1,2")).toThrow("Negatives numbers not allowed: -1");
+});
+
+test("multiple negative numbers throw an exception", () => {
+  expect(() => add("2,-4,3,-5")).toThrow(
+    "Negatives numbers not allowed: -4,-5"
+  );
+});

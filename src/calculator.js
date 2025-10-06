@@ -14,6 +14,12 @@ function add(numbers) {
   }
 
   const parts = numbers.split(delimiterRegex);
+
+  const negatives = parts.filter((n) => parseInt(n, 10) < 0);
+  if (negatives.length > 0) {
+    throw new Error(`Negatives numbers not allowed: ${negatives.join(",")}`);
+  }
+
   return parts.reduce((sum, n) => sum + parseInt(n, 10), 0);
 }
 
