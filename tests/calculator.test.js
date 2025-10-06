@@ -37,3 +37,9 @@ test("multiple negative numbers throw an exception", () => {
     "Negatives numbers not allowed: -4,-5"
   );
 });
+
+test("ignore numbers bigger than 1000", () => {
+  expect(add("2,1001")).toBe(2);
+  expect(add("1000,2,3")).toBe(1005);
+  expect(add("1234,1")).toBe(1);
+});
