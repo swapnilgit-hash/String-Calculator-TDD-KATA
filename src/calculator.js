@@ -20,7 +20,10 @@ function add(numbers) {
     throw new Error(`Negatives numbers not allowed: ${negatives.join(",")}`);
   }
 
-  return parts.reduce((sum, n) => sum + parseInt(n, 10), 0);
+  return parts.reduce((sum, n) => {
+    const num = parseInt(n, 10);
+    return num > 1000 ? sum : sum + num;
+  }, 0);
 }
 
 module.exports = add;
