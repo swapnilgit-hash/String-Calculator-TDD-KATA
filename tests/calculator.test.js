@@ -11,3 +11,8 @@ test("single number returns the number", () => {
 test("two numbers comma-separated returns their sum", () => {
   expect(add("1,5")).toBe(6);
 });
+
+test("handle any amount of number", () => {
+  expect(add("1,2,3,4,5")).toBe(15);
+  expect(add("10,20,30")).toBe(60);
+});
